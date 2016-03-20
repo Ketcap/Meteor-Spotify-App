@@ -1,0 +1,52 @@
+<template name="player">
+  <div id="bigScreenPlayer" class="player side side-nav fixed right">
+    <div class="playerInfo col s12">
+      <img src="http://placehold.it/300x300" class="responsive-img" alt="">
+    </div>
+    <div class="audioInfo col s12">
+        <a href="">Some Song Name</a>
+        <a href="">Some Song Name Artist</a>
+    </div>
+    <div class="controls col s12">
+      <div class="row">
+        <div class="col s12 center padding-bottom valign-wrapper">
+          <i class="material-icons medium playSong valign">play_circle_outline</i> <!-- pause_circle_outline -->
+          <i id="volume" class="material-icons small volumeSong valign">volume_up</i><!-- volume_off -->
+        </div>
+        <div class="col s12">
+          <div class="col s12">
+            <input type="range" class="duration" min="0" value="0" />
+            <span class="fancythumb"></span>
+          </div>
+          <span class="time current left">00:00</span>
+          <span class="time full right">00:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="rightSlide" class="player side side-nav fixed right">
+    <div class="playerInfo col s12">
+      <img src="http://placehold.it/300x300" class="responsive-img" alt="">
+    </div>
+    <div class="audioInfo col s12">
+        <a href="">Some Song Name</a>
+        <a href="">Some Song Name Artist</a>
+    </div>
+    <div class="controls col s12">
+      <div class="row">
+        <div class="col s12 center padding-bottom valign-wrapper">
+          <i class="material-icons medium playSong valign">play_circle_outline</i> <!-- pause_circle_outline -->
+          <i id="volume" class="material-icons small volumeSong valign">volume_up</i><!-- volume_off -->
+        </div>
+        <div class="col s12">
+          <div class="col s12">
+            <input type="range" class="duration" min="0" value="0" />
+            <span class="fancythumb"></span>
+          </div>
+          <span class="time current left">00:00</span>
+          <span class="time full right">00:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

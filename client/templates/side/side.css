@@ -1,0 +1,25 @@
+@media only screen and (max-width : 992px) {
+  div#bigScreenLeft{
+    display: none;
+  }
+}
+@media only screen and (min-width : 992px) {
+  div#leftSlide{
+    display: none;
+  }
+}
+div.side{
+  display: block;
+  height: 100vh;
+  background-color: #3A4750;
+  color: #fff;
+}
+div.side .login-spotify{
+  margin-top: 5%;
+  background-color: #658E18;
+  color: #fff;
+  text-align: center;
+}
+div.side .user img{
+  margin-right: 10px;
+}

@@ -1,0 +1,112 @@
+@media only screen and (max-width : 992px) {
+  div#bigScreenPlayer{
+    display: none;
+  }
+}
+@media only screen and (min-width : 992px) {
+  div#rightSlide{
+    display: none;
+  }
+}
+div.player{
+  height: 100vh;
+  background:#303841;
+  padding: 0 0 !important;
+  font-size: 1em;
+  color: #DFEBED;
+  position: fixed;
+  left: auto !important;
+  right: 0;
+}
+div.player .playerInfo a{
+  color: #fff;
+}
+div.player .playerInfo img {
+  margin-right: 20px;
+}
+div.player .controls{
+  padding-top: 10px;
+  padding-left: 20px;
+}
+div.player .audioInfo > a{
+  min-height: 40px;
+  height: auto;
+  line-height: 40px;
+  color: #DFEBED;
+}
+div.player .controls i {
+  cursor: pointer;
+}
+div.player .controls .medium{
+  margin-left: 55px;
+}
+div.player .controls .time{
+  display: block;
+  float: left;
+  margin-top: 18px;
+}
+div.player .controls .thumb{
+  display: none !important;
+}
+div.player .controls input[type=range]{
+  border: none;
+  background-color: transparent;
+  height: 20px;
+  width: 100%;
+  transition: 0.2s ease-in;
+  -webkit-appearance: none;
+  margin-top: 18px;
+  position: relative;
+  z-index: 99;
+}
+div.player .controls input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: rgba(255,255,255,.3);
+  border: none;
+  border-radius: 6px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+
+}
+div.player .controls .fancythumb{
+  display: block;
+  position: relative;
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 0px;
+  border-radius: 1px;
+  border-bottom: 6px #5f9fff solid;
+  border-bottom-left-radius: 3px;
+  transform-origin: 50% 50%;
+  margin: -72px 100px 0 0;
+  -webkit-transition: 0.9s;
+  -moz-transition: 0.9s;
+  -o-transition: 0.9s;
+  -ms-transition: 0.9s;
+  transition: 0.9s;
+  background: -moz-linear-gradient(top,  rgba(41,137,216,0) 0%, rgba(66,147,234,0) 47%, rgba(95,159,255,0.8) 100%);
+  background: -webkit-linear-gradient(top,  rgba(41,137,216,0) 0%,rgba(66,147,234,0) 47%,rgba(95,159,255,0.8) 100%);
+  background: linear-gradient(to bottom,  rgba(41,137,216,0) 0%,rgba(66,147,234,0) 47%,rgba(95,159,255,0.8) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002989d8', endColorstr='#cc5f9fff',GradientType=0 );
+
+}
+div.player input[type=range]::-webkit-slider-thumb {
+  display: block;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  -ms-transition: 1s;
+  transition: 1s;
+  border-radius: 0;
+  margin-top: 0px;
+  height: 6px;
+  background-color: #5f9fff;
+  width: 6px;
+}
+div.player .padding-bottom{
+  padding-bottom: 10px;
+}

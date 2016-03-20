@@ -1,0 +1,21 @@
+div.search{
+  background: #303841;
+  color: #DFEBED;
+}
+div.search .input-field .prefix {
+    top: .75rem;
+}
+div.search > div.col.s12 >  div.s1 {
+  margin-top: 1.75rem;
+  cursor: pointer;
+}
+div.search .input-field input[type=text]:focus + label {
+   color: #DFEBED;
+}
+div.search .input-field input[type=text]:focus {
+   border-bottom: 1px solid #DFEBED;
+   box-shadow: 0 1px 0 0 #DFEBED;
+}
+div.search .input-field .prefix.active {
+   color: #DFEBED;
+ }
