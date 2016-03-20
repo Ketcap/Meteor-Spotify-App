@@ -23,3 +23,18 @@ div.side .login-spotify{
 div.side .user img{
   margin-right: 10px;
 }
+div.side a{
+  color: #DFEBED !important;
+}
+div.side li:hover{
+  background: transparent;
+}
+div.side li.active {
+  background: transparent;
+}
+div.side-nav .collapsible-body{
+  background: transparent;
+}
+div.side .collapsible-header{
+  margin: 0 0;
+}

@@ -9,5 +9,19 @@ ServiceConfiguration.configurations.update(
   { upsert: true }
 );
 Meteor.methods({
-  
+  spotify:function(){
+  },
+  userPlaylist:function(me){
+    var me = Meteor.user().services.spotify.id;
+    var spotifyApi = new SpotifyWebApi();
+    console.log(spotifyApi)
+    var response = spotifyApi.getUserPlaylists(me, {});
+
+    if (response.error) {
+      spotifyApi.refreshAndUpdateAccessToken();
+      response = spotifyApi.getUserPlaylists(me, {});
+    }
+
+    return response.data.body.items;
+  }
 });
