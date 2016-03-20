@@ -26,6 +26,9 @@ div.side .user img{
 div.side a{
   color: #DFEBED !important;
 }
+div.side a i {
+    line-height: inherit;
+}
 div.side li:hover{
   background: transparent;
 }

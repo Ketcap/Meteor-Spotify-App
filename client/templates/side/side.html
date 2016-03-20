@@ -2,20 +2,20 @@
 
   <div id="bigScreenLeft" class="side side-nav left fixed row">
     {{#if currentUser}}
-      <div class="row">
-        <div class="col s12 center waves-effect waves-light">
+      <ul class="row">
+        <li class="col s12 center waves-effect waves-light">
           <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
-        </div>
-        <div class="col s12 username waves-effect waves-light">
-          <a href="">Welcome {{username}}</a>
-        </div>
-        <div class="col s12 waves-effect waves-light">
-          <a class="logout">Logout</a>
-        </div>
-        <div class="col s12 playlist waves-effect waves-light">
+        </li>
+        <li class="col s12 username waves-effect waves-light">
+          <a href=""><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
+        </li>
+        <li class="col s12 waves-effect waves-light">
+          <a class="logout"><i class="material-icons left">vpn_key</i>Logout</a>
+        </li>
+        <li class="col s12 playlist waves-effect waves-light">
           <ul class="collapsible" data-collapsible="accordion">
             <li class="col s12 active">
-            <a class="collapsible-header active">Your Playlist(s)</a>
+            <a class="collapsible-header active"><i class="material-icons left">playlist_play</i>Your Playlist(s)</a>
               <div class="collapsible-body">
                 <ul>
                 {{# each $.Session.get 'currentPlaylists'}}
@@ -28,8 +28,8 @@
               </div>
             </li>
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
     {{/if}}
     {{#unless currentUser}}
     <div class="row">
@@ -44,17 +44,34 @@
 
   <div id="leftSlide" class="side side-nav left fixed row">
     {{#if currentUser}}
-      <div class="row">
-        <div class="col s12 center">
+      <ul class="row">
+        <li class="col s12 center waves-effect waves-light">
           <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
-        </div>
-        <div class="col s12">
-          {{username}}
-        </div>
-        <div class="col s12">
-          <a class="logout" href="">Logout</a>
-        </div>
-      </div>
+        </li>
+        <li class="col s12 username waves-effect waves-light">
+          <a href=""><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
+        </li>
+        <li class="col s12 waves-effect waves-light">
+          <a class="logout"><i class="material-icons left">vpn_key</i>Logout</a>
+        </li>
+        <li class="col s12 playlist waves-effect waves-light">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li class="col s12 active">
+            <a class="collapsible-header active"><i class="material-icons left">playlist_play</i>Your Playlist(s)</a>
+              <div class="collapsible-body">
+                <ul>
+                {{# each $.Session.get 'currentPlaylists'}}
+                <li class="col s12 row">
+                  <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
+                  <div class="col s7 truncate">{{name}}</div>
+                </li>
+                {{/each}}
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
     {{/if}}
     {{#unless currentUser}}
     <div class="row">

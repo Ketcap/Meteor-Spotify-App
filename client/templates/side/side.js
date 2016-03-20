@@ -4,6 +4,7 @@ Template.side.onRendered(function () {
     closeOnClick:false
   });
 
+  afterLogin()
 
 });
 Template.side.events({
@@ -15,13 +16,7 @@ Template.side.events({
     Meteor.loginWithSpotify(options, function(err) {
       if(!err)
       {
-        Meteor.call('userPlaylist', function(err, response) {
-          Session.set('currentPlaylists',response);
-          console.log(response);
-          $('.collapsible').collapsible({
-              accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-          });
-        });
+        afterLogin();
       }
     });
   },
@@ -39,3 +34,13 @@ Template.side.helpers({
   },
 
 });
+
+function afterLogin(){
+  Meteor.call('userPlaylist', function(err, response) {
+    Session.set('currentPlaylists',response);
+    console.log(response);
+    $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+}
