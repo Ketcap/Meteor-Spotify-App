@@ -1,0 +1,10 @@
+<template name="layout">
+{{> side}}
+<main>
+  <div class="row">
+    {{> search}}
+    {{> yield "main_content"}}
+  </div>
+</main>
+{{> player}}
+</template>

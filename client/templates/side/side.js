@@ -2,6 +2,6 @@ Template.side.onRendered(function () {
 
   $("#leftSide").sideNav({
     edge:'left',
-    closeOnClick:true
+    closeOnClick:false
   });
 });
