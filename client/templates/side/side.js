@@ -38,7 +38,6 @@ Template.side.helpers({
 function afterLogin(){
   Meteor.call('userPlaylist', function(err, response) {
     Session.set('currentPlaylists',response);
-    console.log(response);
     $('.collapsible').collapsible({
         accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });

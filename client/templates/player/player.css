@@ -17,6 +17,7 @@ div.player{
   position: fixed;
   left: auto !important;
   right: 0;
+  overflow-x: hidden;
 }
 div.player .playerInfo a{
   color: #fff;
@@ -26,7 +27,6 @@ div.player .playerInfo img {
 }
 div.player .controls{
   padding-top: 10px;
-  padding-left: 20px;
 }
 div.player .audioInfo > a{
   min-height: 40px;
@@ -38,7 +38,7 @@ div.player .controls i {
   cursor: pointer;
 }
 div.player .controls .medium{
-  margin-left: 55px;
+  margin-left: 75px;
 }
 div.player .controls .time{
   display: block;
