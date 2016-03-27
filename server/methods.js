@@ -12,7 +12,6 @@ Meteor.methods({
   userPlaylist:function(me){
     var me = Meteor.user().services.spotify.id;
     var spotifyApi = new SpotifyWebApi();
-    console.log(spotifyApi);
     var response = spotifyApi.getUserPlaylists(me, {});
 
     if (response.error) {
@@ -47,7 +46,16 @@ Meteor.methods({
       spotifyApi.refreshAndUpdateAccessToken();
       response = spotifyApi.getPlaylist(userid,playlistId,{});
     }
-    console.log(response)
+    return response.data.body;
+  },
+  userInfo:function(userId){
+    var spotifyApi = new SpotifyWebApi();
+    var response = spotifyApi.getUser(userId);
+
+    if(response.error){
+      spotifyApi.refreshAndUpdateAccessToken();
+      response = spotifyApi.getUser(userId);
+    }
     return response.data.body;
   }
 
