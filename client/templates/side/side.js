@@ -4,14 +4,14 @@ Template.side.onRendered(function () {
     closeOnClick:false
   });
 
-  afterLogin()
+  afterLogin();
 
 });
 Template.side.events({
   'click .login-spotify':function(){
     var options = {
       showDialog: true, // Whether or not to force the user to approve the app again if they’ve already done so.
-      requestPermissions: ['user-read-email','playlist-read-private', 'playlist-read-collaborative'] // Spotify access scopes.
+      requestPermissions: ['user-read-email','playlist-read-private', 'playlist-read-collaborative','user-read-private'] // Spotify access scopes.
     };
     Meteor.loginWithSpotify(options, function(err) {
       if(!err)
@@ -22,6 +22,7 @@ Template.side.events({
   },
   'click .logout':function(){
     Meteor.logout();
+    Router.go("/");
   },
 });
 

@@ -2,12 +2,12 @@
 
   <div id="bigScreenLeft" class="side side-nav left fixed row">
     {{#if currentUser}}
+      <div class="col s12 center waves-effect waves-light">
+        <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
+      </div>
       <ul class="row">
-        <li class="col s12 center waves-effect waves-light">
-          <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
-        </li>
         <li class="col s12 username waves-effect waves-light">
-          <a href=""><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
+          <a href="/"><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
         </li>
         <li class="col s12 waves-effect waves-light">
           <a class="logout"><i class="material-icons left">vpn_key</i>Logout</a>
@@ -19,10 +19,12 @@
               <div class="collapsible-body">
                 <ul>
                 {{# each $.Session.get 'currentPlaylists'}}
-                <li class="col s12 row">
-                  <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
-                  <div class="col s7 truncate">{{name}}</div>
-                </li>
+                  {{#linkTo route="myPlaylist" playlistId=id user=owner.id}}
+                  <li class="col s12 row">
+                    <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
+                    <div class="col s7 truncate">{{name}}</div>
+                  </li>
+                  {{/linkTo}}
                 {{/each}}
                 </ul>
               </div>
@@ -44,12 +46,12 @@
 
   <div id="leftSlide" class="side side-nav left fixed row">
     {{#if currentUser}}
+      <div class="col s12 center waves-effect waves-light">
+        <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
+      </div>
       <ul class="row">
-        <li class="col s12 center waves-effect waves-light">
-          <img src={{profilePicture}} alt="Your Profile Picture" class="responsive-img">
-        </li>
         <li class="col s12 username waves-effect waves-light">
-          <a href=""><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
+          <a href="/"><i class="material-icons left">person_outline</i>Welcome {{username}}</a>
         </li>
         <li class="col s12 waves-effect waves-light">
           <a class="logout"><i class="material-icons left">vpn_key</i>Logout</a>
@@ -61,10 +63,12 @@
               <div class="collapsible-body">
                 <ul>
                 {{# each $.Session.get 'currentPlaylists'}}
-                <li class="col s12 row">
-                  <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
-                  <div class="col s7 truncate">{{name}}</div>
-                </li>
+                  {{#linkTo route="myPlaylist" playlistId=id user=owner.id}}
+                  <li class="col s12 row">
+                    <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
+                    <div class="col s7 truncate">{{name}}</div>
+                  </li>
+                  {{/linkTo}}
                 {{/each}}
                 </ul>
               </div>

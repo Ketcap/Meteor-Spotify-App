@@ -1,0 +1,38 @@
+<template name="playlist">
+  {{playlistInfo}}
+  <div class="row playlist">
+    <div class="col s12 highlight">
+      <div class="col s2 playlistImage">
+        <img src="{{$.Session.get 'playlistImage'}}" class="responsive-img" alt="">
+      </div>
+      <div class="col s8 playlistInfo">
+        {{$.Session.get 'playlistName'}}
+        {{#if $.Session.get 'playlistDescription'}}
+          Description:{{$.Session.get 'playlistDescription'}}
+        {{/if}}
+      </div>
+    </div>
+    <table class="highlight bordered col s12">
+      <thead>
+        <tr>
+            <th data-field="id">Song</th>
+            <th data-field="name">Artist</th>
+            <th data-field="price">Links</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{# each $.Session.get 'song'}}
+      <tr>
+        <td class="truncate">{{this.track.name}}</td>
+        <td>
+          {{#each this.track.artists}}
+            {{this.name}}&nbsp;
+          {{/each}}
+        </td>
+        <td>$0.87</td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>

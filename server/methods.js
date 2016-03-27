@@ -9,19 +9,46 @@ ServiceConfiguration.configurations.update(
   { upsert: true }
 );
 Meteor.methods({
-  spotify:function(){
-  },
   userPlaylist:function(me){
     var me = Meteor.user().services.spotify.id;
     var spotifyApi = new SpotifyWebApi();
-    console.log(spotifyApi)
+    console.log(spotifyApi);
     var response = spotifyApi.getUserPlaylists(me, {});
 
     if (response.error) {
       spotifyApi.refreshAndUpdateAccessToken();
       response = spotifyApi.getUserPlaylists(me, {});
     }
-
     return response.data.body.items;
+  },
+  playlistSongs:function(userid,playlistId){
+    if(userid == "me")
+    {
+      userid = Meteor.user().services.spotify.id;
+    }
+    var spotifyApi = new SpotifyWebApi();
+    var response = spotifyApi.getPlaylistTracks(userid,playlistId,{});
+
+    if(response.error){
+      spotifyApi.refreshAndUpdateAccessToken();
+      response = spotifyApi.getPlaylistTracks(userid,playlistId,{});
+    }
+    return response.data.body.items;
+  },
+  playlistInfo:function(userid,playlistId){
+    if(userid == "me")
+    {
+      userid = Meteor.user().services.spotify.id;
+    }
+    var spotifyApi = new SpotifyWebApi();
+    var response = spotifyApi.getPlaylist(userid,playlistId,{});
+
+    if(response.error){
+      spotifyApi.refreshAndUpdateAccessToken();
+      response = spotifyApi.getPlaylist(userid,playlistId,{});
+    }
+    console.log(response)
+    return response.data.body;
   }
+
 });

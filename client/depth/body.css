@@ -1,16 +1,17 @@
 body{
-  background-color:#DFEBED;
+  background-color:#F2F4F8;
+  /* DFEBED */
 }
 body > .row {
   margin-bottom: 0;
 }
 header, main, footer {
- padding-right: 240px;
+ /*padding-right: 240px;*/
  padding-left: 240px;
 }
 @media only screen and (max-width : 992px) {
  header, main, footer {
-   padding-right: 0;
+   /*padding-right: 0;*/
    padding-left: 0;
  }
 }

@@ -60,6 +60,7 @@ oauth@1.1.6
 oauth2@1.1.5
 observe-sequence@1.0.7
 ordered-dict@1.0.4
+pcel:loading@1.0.3
 promise@0.5.1
 raix:handlebar-helpers@0.2.5
 random@1.0.5
@@ -73,6 +74,7 @@ service-configuration@1.0.5
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
+spiderable@1.0.9
 standard-minifiers@1.0.2
 templating@1.1.5
 templating-tools@1.0.0
