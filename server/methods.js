@@ -12,13 +12,23 @@ Meteor.methods({
   userPlaylist:function(me){
     var me = Meteor.user().services.spotify.id;
     var spotifyApi = new SpotifyWebApi();
+    console.log(spotifyApi);
     var response = spotifyApi.getUserPlaylists(me, {});
 
     if (response.error) {
       spotifyApi.refreshAndUpdateAccessToken();
       response = spotifyApi.getUserPlaylists(me, {});
     }
-    return response.data.body.items;
+    var list = response.data.body.items;
+
+    list.forEach(function(value){
+      if(value.owner.id == me){
+        value.owner.id = "Me";
+        console.log(value.owner.id);
+      }
+
+    })
+    return list;
   },
   playlistSongs:function(userid,playlistId){
     if(userid == "me")
@@ -35,7 +45,7 @@ Meteor.methods({
     return response.data.body.items;
   },
   playlistInfo:function(userid,playlistId){
-    if(userid == "me")
+    if(userid == "Me")
     {
       userid = Meteor.user().services.spotify.id;
     }

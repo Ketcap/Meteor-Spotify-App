@@ -23,21 +23,24 @@
     <table class="highlight bordered col s12">
       <thead>
         <tr>
-            <th data-field="id">Song</th>
-            <th data-field="name">Artist</th>
-            <th data-field="price">Links</th>
+            <th data-field="song">Song</th>
+            <th data-field="artist">Artist</th>
+            <th class="center-align" data-field="link">Play</th>
         </tr>
       </thead>
       <tbody>
-      {{# each $.Session.get 'song'}}
+      {{#each $.Session.get 'song'}}
       <tr>
         <td class="truncate">{{this.track.name}}</td>
         <td>
           {{#each this.track.artists}}
-            {{this.name}}&nbsp;
+            {{this.name}}
           {{/each}}
         </td>
-        <td>$0.87</td>
+        <td class="center-align">
+          <a id="{{this.track.preview_url}}" href="#" class="preview tooltipped" data-position="left" data-delay="0" data-tooltip="Play"><i class="material-icons">play_circle_outline</i></a>
+          <a id="{{this.track.preview_url}}" href="#" class="addQueue tooltipped" data-position="left" data-delay="0" data-tooltip="Add Queue"><i class="material-icons">queue</i></a>
+        </td>
       </tr>
       {{/each}}
       </tbody>

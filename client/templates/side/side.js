@@ -1,7 +1,7 @@
 Template.side.onRendered(function () {
   $("#leftSide").sideNav({
     edge:'left',
-    closeOnClick:false
+    closeOnClick:true
   });
 
   afterLogin();
@@ -32,8 +32,7 @@ Template.side.helpers({
   },
   username:function(){
     return Meteor.user().profile.display_name;
-  },
-
+  }
 });
 
 function afterLogin(){

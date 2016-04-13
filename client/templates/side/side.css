@@ -1,4 +1,4 @@
-@media only screen and (max-width : 992px) {
+/*@media only screen and (max-width : 992px) {
   div#bigScreenLeft{
     display: none;
   }
@@ -7,7 +7,7 @@
   div#leftSlide{
     display: none;
   }
-}
+}*/
 div.side{
   display: block;
   height: 100vh;

@@ -6,6 +6,7 @@ Template.playlist.onDestroyed(function () {
 Template.playlist.helpers({
   playlistInfo:function(){
     Session.set('loading','loading');
+    Session.set('song','');
     var param_user = Router.current().params['user'];
     var param_list = Router.current().params['playlistId'];
     var playlist = Meteor.call('playlistInfo',param_user,param_list,function(err,response){
@@ -19,15 +20,25 @@ Template.playlist.helpers({
 
       var user = response.owner.id;
       var owner = Meteor.call('userInfo',user,function(err,response){
+        $('.preview,.addQueue').each(function(){
+          $(this).tooltip();
+        });
         Session.set('owner',response.display_name);
+
         if(!response.display_name)
         {
           Session.set('owner',response.id);
         }
+        
         Session.set('loading','');
 
       });
 
     });
+  },
+});
+Template.playlist.events({
+  'click .preview':function(event){
+    var previewLink = event.currentTarget.id;
   },
 });
