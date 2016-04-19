@@ -25,28 +25,55 @@
     </div>
   </div> -->
   <div id="rightSlide" class="player side side-nav right">
-    <div class="playerInfo col s12">
-      <img src="http://placehold.it/300x300" class="responsive-img" alt="">
+    <div class="col s12">
+      <ul class="tabs">
+          <li class="tab col s6"><a class="active" href="#tabPlayer">Player</a></li>
+          <li class="tab col s6"><a href="#tabQueue">Queue</a></li>
+      </ul>
     </div>
-    <div class="audioInfo col s12">
-        <a href="">Some Song Name</a>
-        <a href="">Some Song Name Artist</a>
-    </div>
-    <div class="controls col s12">
-      <div class="row">
-        <div class="col s12 center padding-bottom valign-wrapper">
-          <i class="material-icons medium playSong valign">play_circle_outline</i> <!-- pause_circle_outline -->
-          <i id="volume" class="material-icons small volumeSong valign">volume_up</i><!-- volume_off -->
-        </div>
-        <div class="col s12">
-          <div class="col s12">
-            <input type="range" class="duration" min="0" value="0" />
-            <span class="fancythumb"></span>
+    <div id="tabPlayer" class="row">
+      <div class="playerInfo col s12">
+        <img src="http://placehold.it/300x300" class="responsive-img songImage" alt="">
+      </div>
+      <div class="audioInfo col s12">
+          <a href="" class="truncate" id="songName">Select Music For Play</a>
+          <a href="" class="truncate" id="songArtist"></a>
+      </div>
+      <div class="controls col s12">
+        <div class="row">
+          <div class="col s12 padding-bottom valign-wrapper row center">
+            <i id="volume" class="material-icons volumeSong valign">volume_up</i><!-- volume_off -->
+            <i class="material-icons playSong valign medium">play_circle_outline</i> <!-- pause_circle_outline -->
+            <i class="material-icons nextSong valign">skip_next</i>
           </div>
-          <span class="time current left">00:00</span>
-          <span class="time full right">00:00</span>
+          <div class="col s12">
+            <div class="col s12">
+              <input type="range" class="duration" min="0" value="0" />
+              <span class="fancythumb"></span>
+            </div>
+            <span class="time current left">00:00</span>
+            <span class="time full right">00:00</span>
+          </div>
         </div>
       </div>
     </div>
+
+    <div id="tabQueue" class="row">
+      <ul>
+      {{#if $.Session.get 'queue'}}
+        {{player}}
+        {{#each $.Session.get 'queue'}}
+          <li>
+            {{name}}
+          </li>
+        {{/each}}
+      {{else}}
+        <li>
+          Queue Is Empty
+        </li>
+      {{/if}}
+      </ul>
+    </div>
+
   </div>
 </template>

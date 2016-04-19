@@ -24,7 +24,6 @@ Meteor.methods({
     list.forEach(function(value){
       if(value.owner.id == me){
         value.owner.id = "Me";
-        console.log(value.owner.id);
       }
 
     })
@@ -67,6 +66,17 @@ Meteor.methods({
       response = spotifyApi.getUser(userId);
     }
     return response.data.body;
-  }
+  },
+  // Future use get track
+  // getTrack:function(trackId){
+  //   var spotifyApi = new SpotifyWebApi();
+  //   var response = spotifyApi.getTrack(trackId,{});
+  //
+  //   if(response.error){
+  //     spotifyApi.refreshAndUpdateAccessToken();
+  //     var response = spotifyApi.getTrack(trackId,{});
+  //   }
+  //   return response.data.body;
+  // },
 
 });

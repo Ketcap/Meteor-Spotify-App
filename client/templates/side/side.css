@@ -23,6 +23,9 @@ div.side .login-spotify{
 div.side .user img{
   margin-right: 10px;
 }
+div.side li{
+  padding: 0 !important;
+}
 div.side a{
   color: #DFEBED !important;
 }
@@ -40,6 +43,11 @@ div.side-nav .collapsible-body{
 }
 div.side .collapsible-header{
   margin: 0 0;
+}
+div.side .refresh{
+  position: absolute;
+  top: 22px;
+  right: 10px;
 }
 div.side .collapsible-body ul > a{
   padding:0;

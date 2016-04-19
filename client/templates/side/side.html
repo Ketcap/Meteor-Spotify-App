@@ -58,16 +58,19 @@
           <ul class="collapsible" data-collapsible="accordion">
             <li class="col s12 active">
             <a class="collapsible-header active"><i class="material-icons left">playlist_play</i>Your Playlist(s)</a>
+            <i class="material-icons refresh">refresh</i>
               <div class="collapsible-body">
                 <ul>
-                {{# each $.Session.get 'currentPlaylists'}}
-                  {{#linkTo route="myPlaylist" playlistId=id user=owner.id}}
-                  <li class="col s12 row">
-                    <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
-                    <div class="col s7 truncate">{{name}}</div>
-                  </li>
-                  {{/linkTo}}
-                {{/each}}
+                {{#if $.Session.get 'currentPlaylists'}}
+                  {{#each $.Session.get 'currentPlaylists'}}
+                    {{#linkTo route="myPlaylist" playlistId=id user=owner.id}}
+                    <li class="col s12 row">
+                      <img src="{{images.[0].url}}" class="responsive-img col s5" alt="">
+                      <div class="col s7 truncate">{{name}}</div>
+                    </li>
+                    {{/linkTo}}
+                  {{/each}}
+                {{/if}}
                 </ul>
               </div>
             </li>

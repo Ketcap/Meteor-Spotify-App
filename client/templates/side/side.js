@@ -24,6 +24,10 @@ Template.side.events({
     Meteor.logout();
     Router.go("/");
   },
+  'click .refresh':function(){
+    afterLogin();
+  },
+
 });
 
 Template.side.helpers({
@@ -36,10 +40,12 @@ Template.side.helpers({
 });
 
 function afterLogin(){
-  Meteor.call('userPlaylist', function(err, response) {
-    Session.set('currentPlaylists',response);
-    $('.collapsible').collapsible({
-        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  if(Meteor.user()){
+    Meteor.call('userPlaylist', function(err, response) {
+      Session.setPersistent('currentPlaylists',response);
+      $('.collapsible').collapsible({
+          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+      });
     });
-  });
+  }
 }

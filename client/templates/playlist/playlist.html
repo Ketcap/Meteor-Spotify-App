@@ -23,23 +23,23 @@
     <table class="highlight bordered col s12">
       <thead>
         <tr>
-            <th data-field="song">Song</th>
-            <th data-field="artist">Artist</th>
-            <th class="center-align" data-field="link">Play</th>
+            <th class="col s5" data-field="song">Song</th>
+            <th class="col s5" data-field="artist">Artist</th>
+            <th class="col s2 center-align" data-field="link">Play</th>
         </tr>
       </thead>
       <tbody>
       {{#each $.Session.get 'song'}}
       <tr>
-        <td class="truncate">{{this.track.name}}</td>
-        <td>
+        <td class="col s5 song truncate">{{this.track.name}}</td>
+        <td class="col s5 artist truncate">
           {{#each this.track.artists}}
             {{this.name}}
           {{/each}}
         </td>
-        <td class="center-align">
-          <a id="{{this.track.preview_url}}" href="#" class="preview tooltipped" data-position="left" data-delay="0" data-tooltip="Play"><i class="material-icons">play_circle_outline</i></a>
-          <a id="{{this.track.preview_url}}" href="#" class="addQueue tooltipped" data-position="left" data-delay="0" data-tooltip="Add Queue"><i class="material-icons">queue</i></a>
+        <td class="col s2 songId center-align" data-song-id="{{track.id}}" image="{{image track}}">
+          <a id="{{track.preview_url}}" href="#" class="preview tooltipped " data-position="left" data-delay="0" data-tooltip="Play"><i class="material-icons">play_circle_outline</i></a>
+          <a id="{{track.preview_url}}" href="#" class="addQueue tooltipped " data-position="left" data-delay="0" data-tooltip="Add Queue"><i class="material-icons">queue</i></a>
         </td>
       </tr>
       {{/each}}

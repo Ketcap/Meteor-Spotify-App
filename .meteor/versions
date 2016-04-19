@@ -1,6 +1,7 @@
 accounts-base@1.2.5
 accounts-oauth@1.1.11
 allow-deny@1.0.3
+amplify@1.0.0
 autopublish@1.0.6
 autoupdate@1.2.7
 babel-compiler@6.6.1
@@ -39,7 +40,7 @@ iron:core@1.0.11
 iron:dynamic-template@1.0.12
 iron:layout@1.0.12
 iron:location@1.0.11
-iron:middleware-stack@1.0.11
+iron:middleware-stack@1.1.0
 iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.7
@@ -83,6 +84,7 @@ standard-minifier-js@1.0.5
 templating@1.1.8
 templating-tools@1.0.3
 tracker@1.0.12
+u2622:persistent-session@0.4.4
 ui@1.0.10
 underscore@1.0.7
 url@1.0.8
