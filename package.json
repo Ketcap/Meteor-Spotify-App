@@ -2,7 +2,5 @@
   "name": "SpotifyApp",
   "version": "1.0.0",
   "scripts": {
-    "start": "meteor --settings settings.json",
-    "start": "meteor --port 8080"
   }
 }
