@@ -1,7 +1,6 @@
 {
   "name": "Meteor-Spotify-App",
   "scripts": {
-    "postdeploy": "meteor --port 8080"
   },
   "env": {
   },
